@@ -87,11 +87,33 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-.console.log(Finances Analysis from 2010 - 2017);
-.console.log("------------------------------");
+console.log("Financial Analysis from 2010 - 2017");
+console.log("----------------");
 
-var totalMonths = finances.length;
-console.log("Total Months: " + totalMonths);
+
+
+
+
+
+
+
+
+
+
+
+
+/* Unfortunately my firsat attempt resulted in a wrong answer in the colsole log
+index.js:90 Financial Analysis from 2010 - 2017
+index.js:91 ----------------
+index.js:94 Total Months: 86
+index.js:97 Total: $38382578
+index.js:104 Average Change: $-2315.12
+index.js:110 Greatest Increase in Profits/Losses: Feb-2012 ($1170593)
+index.js:115 Greatest Decrease in Profits/Losses: Sep-2013 ($-1196225)
+
+
+/*var totalMonths = finances.length;
+console.log("Total Months:", totalMonths);
 
 var totalProfitLosses = finances.reduce((total, record) => total + record[1], 0);
 console.log("Total: $" + totalProfitLosses);
@@ -100,18 +122,16 @@ var totalChange = 0;
 for (var i = 1; i < finances.length; i++) {
   totalChange += finances[i][1] - finances[i - 1][1];
 }
-
 var averageChange = totalChange / (totalMonths - 1);
 console.log("Average Change: $" + averageChange.toFixed(2));
 
-/*var greatestIncrease = 0; This is not working, changed to code below*/
 
-var maxIncrease = Math.max(...finances.map(record => record[1]));
+/*var greatestIncrease = 0; This did not work as aspected, changed to code below*/
+/*var maxIncrease = Math.max(...finances.map(record => record[1]));
 var increaseIndex = finances.findIndex(record => record[1] === maxIncrease);
 console.log("Greatest Increase in Profits/Losses:", finances[increaseIndex][0] + " ($" + maxIncrease + ")");
 
-/*var greatestDecrease = 0; This is also not working, changed to code below*/
-
-var maxDecrease = Math.min(...finances.map(record => record[1]));
+/*var greatestDecrease = 0; This also did not working, changed to code below*/
+/*var maxDecrease = Math.min(...finances.map(record => record[1]));
 var decreaseIndex = finances.findIndex(record => record[1] === maxDecrease);
 console.log("Greatest Decrease in Profits/Losses:", finances[decreaseIndex][0] + " ($" + maxDecrease + ")");
