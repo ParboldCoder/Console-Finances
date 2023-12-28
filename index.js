@@ -86,3 +86,13 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+.console.log(Finances Analysis from 2010 - 2017);
+.console.log("------------------------------");
+
+var totalMonths = finances.length;
+console.log("Total Months: " + totalMonths);
+
+var totalProfitLosses = finances.reduce((total, record) => total + record[1], 0);
+console.log("Total: $" + totalProfitLosses);
+
