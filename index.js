@@ -124,7 +124,7 @@ console.log("Greatest Increase in Profits/Losses:", maxIncreaseMonth + " ($" + m
 console.log("Greatest Decrease in Profits/Losses:", maxDecreaseMonth + " ($" + maxDecrease + ")");
 
 /*___________________________________________________________________________________________________________________________________________________________*/
-/* Unfortunately my firsat attempt resulted in a wrong answer in the colsole log*/
+/* Unfortunately my first attempt resulted in a wrong answer in the colsole log*/
 /*index.js:90 Financial Analysis from 2010 - 2017*/
 /*index.js:91 ----------------*/
 /*index.js:94 Total Months: 86*/
