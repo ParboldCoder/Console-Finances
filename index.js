@@ -104,8 +104,14 @@ for (var i = 1; i < finances.length; i++) {
 var averageChange = totalChange / (totalMonths - 1);
 console.log("Average Change: $" + averageChange.toFixed(2));
 
-var greatestIncrease = 0;
-var increaseIndex = finances.findIndex((record) => record[1] > greatestIncrease);
+/*var greatestIncrease = 0; This is not working, changed to code below*/
 
-var greatestDecrease = 0;
-var decreaseIndex = finances.findIndex((record) => record[1] < greatestDecrease);
+var maxIncrease = Math.max(...finances.map(record => record[1]));
+var increaseIndex = finances.findIndex(record => record[1] === maxIncrease);
+console.log("Greatest Increase in Profits/Losses:", finances[increaseIndex][0] + " ($" + maxIncrease + ")");
+
+/*var greatestDecrease = 0; This is also not working, changed to code below*/
+
+var maxDecrease = Math.min(...finances.map(record => record[1]));
+var decreaseIndex = finances.findIndex(record => record[1] === maxDecrease);
+console.log("Greatest Decrease in Profits/Losses:", finances[decreaseIndex][0] + " ($" + maxDecrease + ")");
