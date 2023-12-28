@@ -96,3 +96,16 @@ console.log("Total Months: " + totalMonths);
 var totalProfitLosses = finances.reduce((total, record) => total + record[1], 0);
 console.log("Total: $" + totalProfitLosses);
 
+var totalChange = 0;
+for (var i = 1; i < finances.length; i++) {
+  totalChange += finances[i][1] - finances[i - 1][1];
+}
+
+var averageChange = totalChange / (totalMonths - 1);
+console.log("Average Change: $" + averageChange.toFixed(2));
+
+var greatestIncrease = 0;
+var increaseIndex = finances.findIndex((record) => record[1] > greatestIncrease);
+
+var greatestDecrease = 0;
+var decreaseIndex = finances.findIndex((record) => record[1] < greatestDecrease);
